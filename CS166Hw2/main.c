@@ -16,7 +16,7 @@ int main(int argc, const char * argv[])
     char plainText[] = "PBFPVYFBQXZTYFPBFEQJHDXXQVAPTPQJKTOYQWIPBVWLXTOXBTFXQWAXBVCXQWAXFQJVWLEQNTOZQGGQLFXQWAKVWLXQWAEBIPBFXFQVXGTVJVWLBTPQWAEBFPBFHCVLXBQUFEVWLXGDPEQVPQGVPPBFTIXPFHXZHVFAGFOTHFEFBQUFTDHZBQPOTHXTYFTODXQHFTDPTOGHFQPBQWAQJJTODXQHFOQPWTBDHHIXQVAPBFZQHCFWPFHPBFIPBQWKFABVYYDZBOTHPBQPQJTQOTOGHFQAPBFEQJHDXXQVAVXEBQPEFZBVFOJIWFFACFCCFHQWAUVWFLQHGFXVAFXQHFUFHILTTAVWAFFAWTEVOITDHFHFQAITIXPFHXAFQHEFZQWGFLVWPTOFFA";
     char englishLetters [26] = {"A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"};
     
-    int countLetters[26] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+    int countLetters[27] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
     double analytics[27] = {0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0};
 
     
@@ -42,17 +42,7 @@ int main(int argc, const char * argv[])
         }
         i++;
     }
-    double tempCipherCount = strlen(cipherText) / 1.0;
-    
-    int tempCountLetters = strlen(cipherText);
-    //printf("%d",tempCountLetters);
-    for (int k = 0 ; k < tempCountLetters; k++)
-    {
-        //printf("%.2f \n",(countLetters[k] / tempCipherCount));
-        //analytics[k] = countLetters[k] / tempCipherCount;
-    }
-    //print(analytics)
-    for (int strIndex = 0; strIndex < tempCountLetters; strIndex++)
+    for (int strIndex = 0; strIndex < strlen(cipherText); strIndex++)
     {
         char currChar = cipherText[strIndex];
         if(currChar == 'A')
@@ -69,11 +59,11 @@ int main(int argc, const char * argv[])
         }
         else if(currChar == 'D')
         {
-            plainText[strIndex] = 'U';//possibly y
+            plainText[strIndex] = 'U';
         }
         else if(currChar == 'E')
         {
-            plainText[strIndex] = 'W';//or W
+            plainText[strIndex] = 'W';
         }
         else if(currChar == 'F')
         {
@@ -96,24 +86,24 @@ int main(int argc, const char * argv[])
             plainText[strIndex] = 'L';
         }
         else if(currChar == 'K')
-            {
-                plainText[strIndex] = 'K';
-            }
+        {
+            plainText[strIndex] = 'K';
+        }
         else if(currChar == 'L')
-            {
-                plainText[strIndex] = 'G';
-            }
+        {
+            plainText[strIndex] = 'G';
+        }
         else if(currChar == 'M')
-            {
-                plainText[strIndex] = ' ';
-            }
+        {
+            plainText[strIndex] = ' ';
+        }
         else if(currChar == 'N')
-            {
-                plainText[strIndex] = 'X';
-            }
+        {
+            plainText[strIndex] = 'X';
+        }
         else if(currChar == 'O')
         {
-            plainText[strIndex] = 'F';//possibly D
+            plainText[strIndex] = 'F';
         }
         else if(currChar == 'P')
         {
@@ -124,44 +114,41 @@ int main(int argc, const char * argv[])
             plainText[strIndex] = 'A';
         }
         else if(currChar == 'R')
-            {
-                plainText[strIndex] = ' ';
-            }
+        {
+            plainText[strIndex] = ' ';
+        }
         else if(currChar == 'S')
-            {
-                plainText[strIndex] = ' ';
-            }
+        {
+            plainText[strIndex] = ' ';
+        }
         else if(currChar == 'T')
-            {
-                plainText[strIndex] = 'O';
-            }
+        {
+            plainText[strIndex] = 'O';
+        }
         else if(currChar == 'U')
-            {
-                plainText[strIndex] = 'V';
-            }
+        {
+            plainText[strIndex] = 'V';
+        }
         else if(currChar == 'V')
         {
             plainText[strIndex] = 'I';
         }
         else if(currChar == 'W')
-            {
-             plainText[strIndex] = 'N';
-            }
+        {
+            plainText[strIndex] = 'N';
+        }
         else if(currChar == 'X')
         {
             plainText[strIndex] = 'S';
         }
         else if(currChar == 'Y')
-            {
-                plainText[strIndex] = 'M';
-            }
+        {
+            plainText[strIndex] = 'M';
+        }
         else if(currChar == 'Z')
-            {
-                plainText[strIndex] = 'C';
-            }
-    
-    
-    
+        {
+            plainText[strIndex] = 'C';
+        }
     }
     printf("%s\n\n", cipherText);
     printf("%s\n\n", plainText);
@@ -169,7 +156,3 @@ int main(int argc, const char * argv[])
     return 0;
 }
 
-void printArray(char *arr)
-{
-    
-}
